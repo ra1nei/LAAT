@@ -456,11 +456,11 @@ def main():
         import numpy as np
 
         if args.dataset == "CIFAR100FS":
-            feature_file = "anchors/cifarfs_clip_weight_a.npy"
-            class_file = "anchors/cifarfs_classes.txt"
+            feature_file = "/kaggle/working/LAAT/anchors/cifarfs_clip_weight_a.npy"
+            class_file = "/kaggle/working/LAAT/anchors/cifarfs_classes.txt"
         elif args.dataset == "miniImageNet":
-            feature_file = "anchors/miniimagenet_clip_weight_a.npy"
-            class_file = "anchors/miniimagenet_classes.txt"
+            feature_file = "/kaggle/working/LAAT/anchors/miniimagenet_clip_weight_a.npy"
+            class_file = "/kaggle/working/LAAT/anchors/miniimagenet_classes.txt"
         else:
             raise ValueError(args.dataset)
         # Verify classes
