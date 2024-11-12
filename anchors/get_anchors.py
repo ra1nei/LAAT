@@ -1,4 +1,4 @@
-import os, argparse, time
+import os, argparse, time, sys
 import copy
 import numpy as np
 import torch
@@ -7,6 +7,7 @@ import torch.nn.functional as F
 from torch.utils import data
 import clip
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import utils
 
 
