@@ -86,7 +86,6 @@ if __name__ == "__main__":
         ds = int(sys.argv[2])
     else:
         ds = None
-    print("================================", sys.argv[1]+"_anchors.npy", "================================")
     weight = np.load("/kaggle/working/LAAT/anchors/"+sys.argv[1]+"_anchors.npy")
     text_features = torch.from_numpy(weight)
     if ds is None:
