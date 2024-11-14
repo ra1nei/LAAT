@@ -86,8 +86,8 @@ if __name__ == "__main__":
         ds = int(sys.argv[2])
     else:
         ds = None
-    weight = np.load(sys.argv[1]+"_anchors.npy")
     print("================================", sys.argv[1]+"_anchors.npy", "================================")
+    weight = np.load(sys.argv[1]+"_anchors.npy")
     text_features = torch.from_numpy(weight)
     if ds is None:
         np.save(sys.argv[1]+"_clip_weight_a.npy", convert(text_features).float().numpy())
