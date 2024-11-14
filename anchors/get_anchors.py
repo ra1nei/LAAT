@@ -22,8 +22,8 @@ def get_arguments():
         default="This is a photo of a {}",
         help="prompt to embed class label",
     )
-    parser.add_argument("--classes", default="imagenet_classes.txt")
-    parser.add_argument("--to", default="imagenet_anchors.npy")
+    parser.add_argument("--classes", default="miniimagenet_classes.txt")
+    parser.add_argument("--to", default="miniimagenet_anchors.npy")
     parser.add_argument("--bs", type=int, default=100)
     return parser.parse_args()
 
