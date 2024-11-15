@@ -1,4 +1,4 @@
-import os, argparse, time
+import os, argparse, time, sys
 import copy
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,6 +12,8 @@ import clip
 from models import *
 from datasets import *
 from attacks import *
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import utils
 import awp
 
