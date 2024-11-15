@@ -13,7 +13,7 @@ from models import *
 from datasets import *
 from attacks import *
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import utils
 import awp
 
