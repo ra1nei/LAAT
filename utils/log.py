@@ -1,4 +1,4 @@
-import logging
+import logging, sys
 
 
 def log_display(epoch, global_step, time_elapse, **kwargs):
@@ -11,7 +11,6 @@ def log_display(epoch, global_step, time_elapse, **kwargs):
     display += "\ttime=%.2fit/s" % (1.0 / time_elapse)
     return display
 
-
 def setup_logger(name, log_file, level=logging.INFO):
     """To setup as many loggers as you want"""
     logger = logging.getLogger(name)
@@ -19,6 +18,6 @@ def setup_logger(name, log_file, level=logging.INFO):
         format="[%(asctime)s] - %(message)s",
         datefmt="%Y/%m/%d %H:%M:%S",
         level=level,
-        handlers=[logging.FileHandler(log_file), logging.StreamHandler()],
+        handlers=[logging.FileHandler(log_file), logging.StreamHandler(sys.stdout)],
     )
     return logger
