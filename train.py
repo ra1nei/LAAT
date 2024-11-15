@@ -644,8 +644,10 @@ def main():
                     torch.save(state, f)
 
             # log this epoch
-            logger.info(utils.get_summary(train_meters + val_meters))
-            logger.info(ENV)
+            print(utils.log_display(epoch, ENV['global_step'], time_elapse=0.01, train_acc=train_results['train_clean_acc'], val_acc=val_results['val_clean_acc'], val_robust_acc=val_results['val_robust_acc']))
+            # logger.info(utils.get_summary(train_meters + val_meters))
+            # logger.info(ENV)
+            
     # No need to test last
     if not args.eval:
         checkpoint = utils.load_model(
