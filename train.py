@@ -344,6 +344,7 @@ def main():
     exp_path = get_exp_path(args)
     print("Exp path is", exp_path)
     if args.eval:
+        os.makedirs(exp_path, exist_ok=True)
         assert os.path.exists(exp_path)
     else:
         os.makedirs(exp_path, exist_ok=True)
