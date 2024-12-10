@@ -2,23 +2,12 @@
 python get_anchors.py --classes cifarfs_classes.txt --to cifarfs_anchors.npy
 python convert_anchor.py cifarfs 64
 
-########## Train ##########
-python train.py \
---data_dir /path/to/dataset --exp_name /path/to/save \
---seed 3407 \
---n_support 0 \
---dataset CIFAR100FS \
---model Conv4-512 \
---use_linear --head cos-span \
---train_type TRADES-cos \
---suffix 1
-
 ########## TEST - CIFAR100FS ##########
 
 ### Conv4-512-CIFAR100FS-FGSM
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/CIFAR100FS/FGSM \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -32,7 +21,7 @@ python train.py \
 ### Conv4-512-CIFAR100FS-AA
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/CIFAR100FS/AA \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -46,7 +35,7 @@ python train.py \
 ### Conv4-512-CIFAR100FS-PGD
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/CIFAR100FS/PGD \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -60,7 +49,7 @@ python train.py \
 ###  Conv4-512-CIFAR100FS-CW
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/CIFAR100FS/CW \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -74,7 +63,7 @@ python train.py \
 ### ResNet12-CIFAR100FS-FGSM
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/CIFAR100FS/FGSM \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -88,7 +77,7 @@ python train.py \
 ### ResNet12-CIFAR100FS-AA
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/CIFAR100FS/AA \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -102,7 +91,7 @@ python train.py \
 ### ResNet12-CIFAR100FS-PGD
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/CIFAR100FS/PGD \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -116,7 +105,7 @@ python train.py \
 ###  ResNet12-CIFAR100FS-CW
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/CIFAR100FS \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/CIFAR100FS/CW \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
@@ -132,7 +121,7 @@ python train.py \
 ### Conv4-512-miniImageNet-FGSM
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/miniImageNet/FGSM \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -146,7 +135,7 @@ python train.py \
 ### Conv4-512-miniImageNet-AA
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/miniImageNet/AA \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -160,7 +149,7 @@ python train.py \
 ### Conv4-512-miniImageNet-PGD
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/miniImageNet/PGD \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -174,7 +163,7 @@ python train.py \
 ###  Conv4-512-miniImageNet-CW
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/Conv4-512/miniImageNet/CW \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -188,7 +177,7 @@ python train.py \
 ### ResNet12-miniImageNet-FGSM
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/miniImageNet/FGSM \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -202,7 +191,7 @@ python train.py \
 ### ResNet12-miniImageNet-AA
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/miniImageNet/AA \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -216,7 +205,7 @@ python train.py \
 ### ResNet12-miniImageNet-PGD
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/miniImageNet/PGD \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
@@ -230,7 +219,7 @@ python train.py \
 ###  ResNet12-miniImageNet-CW
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset/miniImageNet \
---exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output/ResNet12/miniImageNet/CW \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
 --seed 3407 \
 --n_support 0 \
 --dataset miniImageNet \
