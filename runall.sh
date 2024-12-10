@@ -1,6 +1,6 @@
 ### Craft Anchors
-python get_anchors.py --classes cifarfs_classes.txt --to cifarfs_anchors.npy
-python convert_anchor.py cifarfs 64
+python /anchors/get_anchors.py --classes /anchors/cifarfs_classes.txt --to /anchors/cifarfs_anchors.npy
+python /anchors/convert_anchor.py cifarfs 64
 
 ########## TEST - CIFAR100FS ##########
 
