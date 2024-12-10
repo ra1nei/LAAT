@@ -86,16 +86,16 @@ if __name__ == "__main__":
         ds = int(sys.argv[2])
     else:
         ds = None
-    weight = np.load("/kaggle/working/LAAT/anchors/"+sys.argv[1]+"_anchors.npy")
+    weight = np.load("/home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/"+sys.argv[1]+"_anchors.npy")
     text_features = torch.from_numpy(weight)
     if ds is None:
-        np.save("/kaggle/working/LAAT/anchors/"+sys.argv[1]+"_clip_weight_a.npy", convert(text_features).float().numpy())
+        np.save("/home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/"+sys.argv[1]+"_clip_weight_a.npy", convert(text_features).float().numpy())
     else:
         feat1 = convert(text_features[:ds])
         feat2 = convert(text_features[:ds], text_features[ds:])
         feat = torch.cat((feat1, feat2)).float().numpy()
         print(feat.shape)
-        np.save("/kaggle/working/LAAT/anchors/"+sys.argv[1]+"_clip_weight_a.npy", feat)
+        np.save("/home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/"+sys.argv[1]+"_clip_weight_a.npy", feat)
     # converted = convert(text_features, text_features[:50])
     # converted2 = convert(text_features)[:50]
     # print(torch.sum(torch.abs(converted - converted2)))
