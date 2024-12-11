@@ -172,7 +172,7 @@ def train(epoch, model, optimizer, adversary, awp_adversary, trainloader, device
             logits_clean_2 = model(X)
             loss_clean = base_criterion(logits_clean, y)
             loss_kl = criterion_kl(
-                F.json_softmax(logits_adv, dim=1), F.softmax(logits_clean_2, dim=1)
+                F.log_softmax(logits_adv, dim=1), F.softmax(logits_clean_2, dim=1)
             )
             loss = loss_clean + args.beta * loss_kl
             loss_adv = loss_kl
@@ -278,7 +278,7 @@ def test(is_val, model, test_text_features, adversary, testloader, device, args)
                 logits_adv = model(X_adv)
                 loss_clean = base_criterion(logits_clean, y)
                 loss_kl = criterion_kl(
-                    F.json_softmax(logits_adv, dim=1), F.softmax(logits_clean, dim=1)
+                    F.log_softmax(logits_adv, dim=1), F.softmax(logits_clean, dim=1)
                 )
                 loss_adv = loss_kl
             elif args.train_type == "TRADES-cos":
