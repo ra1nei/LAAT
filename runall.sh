@@ -2,6 +2,19 @@
 python /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/get_anchors.py --classes /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/cifarfs_classes.txt --to /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/cifarfs_anchors.npy
 python /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/convert_anchor.py cifarfs 64
 
+
+########## TRAIN ##########
+python train.py \
+--data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
+--exp_name /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Output \
+--seed 3407 \
+--n_support 0 \
+--dataset CIFAR100FS \
+--model Conv4-512 \
+--use_linear --head cos-span \
+--train_type TRADES-cos \
+--suffix 1
+
 ########## TEST - CIFAR100FS ##########
 
 ### Conv4-512-CIFAR100FS-FGSM
