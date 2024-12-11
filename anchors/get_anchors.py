@@ -22,8 +22,8 @@ def get_arguments():
         default="This is a photo of a {}",
         help="prompt to embed class label",
     )
-    parser.add_argument("--classes", default="/kaggle/working/LAAT/anchors/miniimagenet_classes.txt")
-    parser.add_argument("--to", default="/kaggle/working/LAAT/anchors/miniimagenet_anchors.npy")
+    parser.add_argument("--classes", default="/home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/miniimagenet_classes.txt")
+    parser.add_argument("--to", default="/home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT/anchors/miniimagenet_anchors.npy")
     parser.add_argument("--bs", type=int, default=100)
     return parser.parse_args()
 
