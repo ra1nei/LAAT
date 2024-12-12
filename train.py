@@ -348,7 +348,7 @@ def main():
         assert os.path.exists(exp_path)
     else:
         os.makedirs(exp_path, exist_ok=True)
-    log_file_path = os.path.join(exp_path, "eval.json" if args.eval else "train.json")
+    log_file_path = os.path.join(exp_path, "eval.log" if args.eval else "train.log")
 
     if args.seed is not None:
         torch.manual_seed(args.seed)
@@ -366,7 +366,7 @@ def main():
 
     logger = utils.setup_logger(name="CLIP_" + args.modelname, log_file=log_file_path)
     print(args)
-    # logger.info(args)
+    logger.info(args)
 
     # Import dataset
     if args.dataset == "CIFAR100FS":
@@ -548,7 +548,7 @@ def main():
         test_adversary = CWLinf(eps)
     elif args.attack == "AA":
         from autoattack import AutoAttack
-        aa_log_path = os.path.join(exp_path, "autoattack.json")
+        aa_log_path = os.path.join(exp_path, "autoattack.log")
         test_adversary = AutoAttack(test_model, eps=eps, log_path=aa_log_path)
     else:
         test_adversary = None
@@ -580,13 +580,13 @@ def main():
             os.path.join(exp_path, f"model_{args.load}"), backbone, optimizer
         )
         print("Load epoch {}".format(checkpoint["epoch"]))
-        # logger.info("Load epoch {}".format(checkpoint["epoch"]))
+        logger.info("Load epoch {}".format(checkpoint["epoch"]))
     if args.load_best:
         checkpoint = utils.load_model(
             os.path.join(exp_path, "model_best"), backbone, optimizer
         )
         print("Load best epoch {}".format(checkpoint["epoch"]))
-        # logger.info("Load best epoch {}".format(checkpoint["epoch"]))
+        logger.info("Load best epoch {}".format(checkpoint["epoch"]))
     if args.load_pretrained is not None:
         checkpoint = utils.load_model(args.load_pretrained, backbone, optimizer)
     if checkpoint is not None:
@@ -652,8 +652,8 @@ def main():
             print(utils.get_summary(train_meters + val_meters))
             print(ENV)
 
-            # logger.info(utils.get_summary(train_meters + val_meters))
-            # logger.info(ENV)
+            logger.info(utils.get_summary(train_meters + val_meters))
+            logger.info(ENV)
             
     # No need to test last
     if not args.eval:
@@ -661,15 +661,15 @@ def main():
             os.path.join(exp_path, "model_best"), backbone, optimizer
         )
         print("Test best epoch {}".format(checkpoint["epoch"]))
-        # logger.info("Test best epoch {}".format(checkpoint["epoch"]))
+        logger.info("Test best epoch {}".format(checkpoint["epoch"]))
     test_meters = test(
         False, test_model, test_text_features, test_adversary, testloader, device, args
     )
     print(utils.get_summary(test_meters))
-    # logger.info(utils.get_summary(test_meters))
+    logger.info(utils.get_summary(test_meters))
     meters = filter(lambda _: isinstance(_, utils.SamplesMeter), test_meters)
     print("  ".join(m.summary() for m in meters))
-    # logger.info("  ".join(m.summary() for m in meters))
+    logger.info("  ".join(m.summary() for m in meters))
 
 
 if __name__ == "__main__":
