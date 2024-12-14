@@ -365,8 +365,8 @@ def main():
     # print(device_list)
 
     logger = utils.setup_logger(name="CLIP_" + args.modelname, log_file=log_file_path)
-    print(args, '\n')
-    logger.info(args, '\n')
+    print(str(args) + '\n')
+    logger.info(str(args) + '\n')
 
     # Import dataset
     if args.dataset == "CIFAR100FS":
@@ -649,11 +649,11 @@ def main():
 
             # log this epoch
             
-            print(utils.get_summary(train_meters + val_meters), '\n')
-            print(ENV, '\n')
+            print(str(utils.get_summary(train_meters + val_meters)) + '\n')
+            print(str(ENV) + '\n')
 
-            logger.info(utils.get_summary(train_meters + val_meters), '\n')
-            logger.info(ENV, '\n')
+            logger.info(str(utils.get_summary(train_meters + val_meters)) + '\n')
+            logger.info(str(ENV) + '\n')
             
     # No need to test last
     if not args.eval:
@@ -665,8 +665,8 @@ def main():
     test_meters = test(
         False, test_model, test_text_features, test_adversary, testloader, device, args
     )
-    print(utils.get_summary(test_meters), '\n')
-    logger.info(utils.get_summary(test_meters), '\n')
+    print(str(utils.get_summary(test_meters)) + '\n')
+    logger.info(str(utils.get_summary(test_meters)) + '\n')
     meters = filter(lambda _: isinstance(_, utils.SamplesMeter), test_meters)
     print("\n".join(m.summary() for m in meters))
     logger.info("\n".join(m.summary() for m in meters))
