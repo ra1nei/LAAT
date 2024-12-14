@@ -365,8 +365,8 @@ def main():
     # print(device_list)
 
     logger = utils.setup_logger(name="CLIP_" + args.modelname, log_file=log_file_path)
-    print(args)
-    logger.info(args)
+    print(args, '\n')
+    logger.info(args, '\n')
 
     # Import dataset
     if args.dataset == "CIFAR100FS":
@@ -579,14 +579,14 @@ def main():
         checkpoint = utils.load_model(
             os.path.join(exp_path, f"model_{args.load}"), backbone, optimizer
         )
-        print("Load epoch {}".format(checkpoint["epoch"]))
-        logger.info("Load epoch {}".format(checkpoint["epoch"]))
+        print("Load epoch {}\n".format(checkpoint["epoch"]))
+        logger.info("Load epoch {}\n".format(checkpoint["epoch"]))
     if args.load_best:
         checkpoint = utils.load_model(
             os.path.join(exp_path, "model_best"), backbone, optimizer
         )
-        print("Load best epoch {}".format(checkpoint["epoch"]))
-        logger.info("Load best epoch {}".format(checkpoint["epoch"]))
+        print("Load best epoch {}\n".format(checkpoint["epoch"]))
+        logger.info("Load best epoch {}\n".format(checkpoint["epoch"]))
     if args.load_pretrained is not None:
         checkpoint = utils.load_model(args.load_pretrained, backbone, optimizer)
     if checkpoint is not None:
@@ -649,27 +649,27 @@ def main():
 
             # log this epoch
             
-            print(utils.get_summary(train_meters + val_meters))
-            print(ENV)
+            print(utils.get_summary(train_meters + val_meters), '\n')
+            print(ENV, '\n')
 
-            logger.info(utils.get_summary(train_meters + val_meters))
-            logger.info(ENV)
+            logger.info(utils.get_summary(train_meters + val_meters), '\n')
+            logger.info(ENV, '\n')
             
     # No need to test last
     if not args.eval:
         checkpoint = utils.load_model(
             os.path.join(exp_path, "model_best"), backbone, optimizer
         )
-        print("Test best epoch {}".format(checkpoint["epoch"]))
-        logger.info("Test best epoch {}".format(checkpoint["epoch"]))
+        print("Test best epoch {}\n".format(checkpoint["epoch"]))
+        logger.info("Test best epoch {}\n".format(checkpoint["epoch"]))
     test_meters = test(
         False, test_model, test_text_features, test_adversary, testloader, device, args
     )
-    print(utils.get_summary(test_meters))
-    logger.info(utils.get_summary(test_meters))
+    print(utils.get_summary(test_meters), '\n')
+    logger.info(utils.get_summary(test_meters), '\n')
     meters = filter(lambda _: isinstance(_, utils.SamplesMeter), test_meters)
-    print("  ".join(m.summary() for m in meters))
-    logger.info("  ".join(m.summary() for m in meters))
+    print("\n".join(m.summary() for m in meters))
+    logger.info("\n".join(m.summary() for m in meters))
 
 
 if __name__ == "__main__":
