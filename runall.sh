@@ -110,7 +110,7 @@ python train.py \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
---model Conv4-512 \
+--model ResNet12 \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1
@@ -135,7 +135,7 @@ python train.py \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
---model Conv4-512 \
+--model ResNet12 \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1
@@ -160,7 +160,7 @@ python train.py \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
---model Conv4-512 \
+--model ResNet12 \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1
@@ -185,7 +185,7 @@ python train.py \
 --seed 3407 \
 --n_support 0 \
 --dataset CIFAR100FS \
---model Conv4-512 \
+--model ResNet12 \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1
