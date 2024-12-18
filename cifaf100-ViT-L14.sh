@@ -14,7 +14,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14 
+--modelname ViT-L/14 
 ### Conv4-512-CIFAR100FS-FGSM
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -28,7 +28,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack FGSM --n_test 100 \ 
---modelname ViT-L14 
+--modelname ViT-L/14 
 
 ########## TRAIN ##########
 python train.py \
@@ -41,7 +41,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ### Conv4-512-CIFAR100FS-AA
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -55,7 +55,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack AA --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
 
 ########## TRAIN ##########
 python train.py \
@@ -68,7 +68,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ### Conv4-512-CIFAR100FS-PGD
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -82,7 +82,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack PGD --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
 
 ########## TRAIN ##########
 python train.py \
@@ -95,7 +95,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ###  Conv4-512-CIFAR100FS-CW
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -109,7 +109,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack CW --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
 
 ########## TRAIN ##########
 python train.py \
@@ -122,7 +122,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ### ResNet12-CIFAR100FS-FGSM
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -136,7 +136,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack FGSM --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
 
 ########## TRAIN ##########
 python train.py \
@@ -149,7 +149,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ### ResNet12-CIFAR100FS-AA
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -163,7 +163,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack AA --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
 
 ########## TRAIN ##########
 python train.py \
@@ -176,7 +176,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ### ResNet12-CIFAR100FS-PGD
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -190,7 +190,7 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack PGD --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
 
 ########## TRAIN ##########
 python train.py \
@@ -203,7 +203,7 @@ python train.py \
 --use_linear --head cos-span \
 --train_type TRADES-cos \
 --suffix 1 \
---modelname ViT-L14
+--modelname ViT-L/14
 ###  ResNet12-CIFAR100FS-CW
 python train.py \
 --data_dir /home/khoahocmaytinh2022/Desktop/KhanhDang/LAAT_Dataset \
@@ -217,4 +217,4 @@ python train.py \
 --suffix 1 \
 --eval --load_best \
 --attack CW --n_test 100 \
---modelname ViT-L14
+--modelname ViT-L/14
